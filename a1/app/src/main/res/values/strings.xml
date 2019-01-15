@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">imtiazud-CardioBook</string>
+
+    <string name="header">CardioBook</string>
+    <string name="sub_head">Record your blood pressure and heart rate below.</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="systolic">Systolic pressure (mmHg)</string>
+    <string name="diastolic">Diastolic pressure (mmHg)</string>
+    <string name="heart_rate">Heart rate (BPM)</string>
+    <string name="comment">Do you want to add a comment></string>
+
+</resources>
