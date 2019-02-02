@@ -12,6 +12,7 @@ We learnt how to
 ----------
 
 **Lab Participation Exercise (Java, OOP)**
+
 We were supposed to add three new model classes to LonelyTwitter:
 - The first should be an abstract base class which represents the current mood. 
 - The second and third should be non-abstract classes which represent different moods and inherit from the abstract class. 
