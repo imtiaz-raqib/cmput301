@@ -17,6 +17,7 @@
     <string name="record_add">Record</string>
     <string name="show_records">Show List</string>
     <string name="delete_record">Delete Record</string>
+    <string name="edit_record">Edit Record</string>
     <string name="title_activity_record_list">RecordList</string>
     <string name="title_show">Show</string>
     <string name="title_record">Record</string>
