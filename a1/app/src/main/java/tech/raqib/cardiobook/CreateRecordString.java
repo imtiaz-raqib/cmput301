@@ -22,7 +22,7 @@ public class CreateRecordString {
                                 String hr, String comment) {
 
         recordString = date + "@" + time + ": Sp - " + systolic + " Dp - " + diastolic
-                + " HR - " + hr + "Comment - " + comment;
+                + " HR - " + hr + " Comment - " + comment;
     }
 
     @Override

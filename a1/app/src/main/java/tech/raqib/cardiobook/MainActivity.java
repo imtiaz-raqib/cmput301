@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -17,24 +18,32 @@ import android.widget.TimePicker;
 public class MainActivity extends AppCompatActivity implements OnTimeSetListener, OnDateSetListener {
 
 
-    private EditText displayDate;                    // Variable for Date Dialog
-    private EditText displayTime;                    // Variable for Time Dialog
-    private EditText getSystolicPressure;
-    private EditText getDiastolicPressure;
-    private EditText getHeartRate;
-    private EditText getComment;
-    private EditText getDate;
-    private EditText getTime;
+    public EditText displayDate;                    // Variable for Date Dialog
+    public EditText displayTime;                    // Variable for Time Dialog
+    public EditText getSystolicPressure;
+    public EditText getDiastolicPressure;
+    public EditText getHeartRate;
+    public EditText getComment;
+    public String recordString;
+//    private EditText getDate;
+//    private EditText getTime;
 
     public static final String RECORD_STRING = "tech.raqib.helloworld.MESSAGE";
+    public static final String mDate = "tech.raqib.helloworld.MESSAGE";
+    public static final String mTime = "tech.raqib.helloworld.MESSAGE";
+    public static final String mSp = "tech.raqib.helloworld.MESSAGE";
+    public static final String mDp = "tech.raqib.helloworld.MESSAGE";
+    public static final String mHR = "tech.raqib.helloworld.MESSAGE";
+    public static final String mComment = "tech.raqib.helloworld.MESSAGE";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getDate = findViewById(R.id.date_in);
-        getTime = findViewById(R.id.time_in);
+//        getDate = findViewById(R.id.date_in);
+//        getTime = findViewById(R.id.time_in);
         getSystolicPressure = findViewById(R.id.systolic);
         getDiastolicPressure = findViewById(R.id.diastolic);
         getHeartRate = findViewById(R.id.hr);
@@ -49,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements OnTimeSetListener
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RecordList.class);
+                intent.putExtra("RECORD_STRING", recordString);
                 finish();
                 startActivity(intent);
             }
@@ -59,8 +69,8 @@ public class MainActivity extends AppCompatActivity implements OnTimeSetListener
             @Override
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                String date = getDate.getText().toString();
-                String time = getTime.getText().toString();
+                String date = displayDate.getText().toString();
+                String time = displayTime.getText().toString();
                 String systolicPressure = getSystolicPressure.getText().toString();
                 String diastolicPressure = getDiastolicPressure.getText().toString();
                 String heartRate = getHeartRate.getText().toString();
@@ -68,11 +78,8 @@ public class MainActivity extends AppCompatActivity implements OnTimeSetListener
 
                 CreateRecordString record = new CreateRecordString();
                 record.setRecordString(date, time, systolicPressure, diastolicPressure, heartRate, comment);
-                String recordString = record.toString();
+                recordString = record.toString();
 
-                Intent recordIntent = new Intent(MainActivity.this, RecordList.class);
-                recordIntent.putExtra(RECORD_STRING, recordString);
-                startActivity(recordIntent);
             }
         });
 

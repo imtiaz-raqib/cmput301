@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/oldTweetsTitle"
+        android:id="@+id/record_header"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -34,8 +34,19 @@
         android:textColor="@android:color/white" />
 
     <Button
+        android:id="@+id/edit_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16sp"
+        android:layout_marginRight="20dp"
+        android:background="@color/primary"
+        android:text="@string/edit_record"
+        android:textColor="@android:color/white" />
+
+    <Button
         android:id="@+id/delete_record"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
