@@ -14,7 +14,7 @@
     <string name="heart_rate">Record your heart rate</string>
     <string name="hr_value">BPM</string>
     <string name="comment">Do you want to add a comment?</string>
-    <string name="record_add">Record</string>
+    <string name="record_add">Add Record</string>
     <string name="show_records">Show List</string>
     <string name="delete_record">Delete Record</string>
     <string name="edit_record">Edit Record</string>

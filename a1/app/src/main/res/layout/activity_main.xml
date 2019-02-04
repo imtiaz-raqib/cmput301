@@ -49,6 +49,7 @@
         android:ems="10"
         android:gravity="center"
         android:hint="@string/date"
+        android:focusable="false"
         android:inputType="date"
         app:layout_constraintEnd_toStartOf="@+id/time_in"
         app:layout_constraintHorizontal_bias="0.142"
