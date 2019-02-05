@@ -25,16 +25,9 @@ public class MainActivity extends AppCompatActivity implements OnTimeSetListener
     public EditText getHeartRate;
     public EditText getComment;
     public String recordString;
-//    private EditText getDate;
-//    private EditText getTime;
 
     public static final String RECORD_STRING = "tech.raqib.helloworld.MESSAGE";
-    public static final String mDate = "tech.raqib.helloworld.MESSAGE";
-    public static final String mTime = "tech.raqib.helloworld.MESSAGE";
-    public static final String mSp = "tech.raqib.helloworld.MESSAGE";
-    public static final String mDp = "tech.raqib.helloworld.MESSAGE";
-    public static final String mHR = "tech.raqib.helloworld.MESSAGE";
-    public static final String mComment = "tech.raqib.helloworld.MESSAGE";
+    private final static int REQUEST_CODE_1 = 1;
 
 
     @Override
@@ -42,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements OnTimeSetListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        getDate = findViewById(R.id.date_in);
-//        getTime = findViewById(R.id.time_in);
         getSystolicPressure = findViewById(R.id.systolic);
         getDiastolicPressure = findViewById(R.id.diastolic);
         getHeartRate = findViewById(R.id.hr);
@@ -53,16 +44,17 @@ public class MainActivity extends AppCompatActivity implements OnTimeSetListener
         This allows for the user to click on "SHOW LIST" to go to the activity RecordList.java
         and start a new activity
          */
-        Button showListButton = findViewById(R.id.show_list);
-        showListButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RecordList.class);
-                intent.putExtra("RECORD_STRING", recordString);
-                finish();
-                startActivity(intent);
-            }
-        });
+//        Button showListButton = findViewById(R.id.show_list);
+//        showListButton.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, RecordList.class);
+//                intent.putExtra("RECORD_STRING", recordString);
+//                setResult(RESULT_OK, intent);
+//                finish();
+//
+//            }
+//        });
 
         Button recordMeasurementButton = findViewById(R.id.add_record);
         recordMeasurementButton.setOnClickListener(new OnClickListener() {
@@ -79,6 +71,11 @@ public class MainActivity extends AppCompatActivity implements OnTimeSetListener
                 CreateRecordString record = new CreateRecordString();
                 record.setRecordString(date, time, systolicPressure, diastolicPressure, heartRate, comment);
                 recordString = record.toString();
+
+                Intent intent = new Intent();
+                intent.putExtra("RECORD_STRING", recordString);
+                setResult(RESULT_OK, intent);
+                finish();
 
             }
         });
