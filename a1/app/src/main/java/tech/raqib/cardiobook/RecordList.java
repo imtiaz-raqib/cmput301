@@ -81,8 +81,11 @@ public class RecordList extends AppCompatActivity {
 		 */
         adapter = new ArrayAdapter<String>(this, R.layout.list_item, recordList);
 
-        //oldRecordList.setAdapter(adapter);
-
+//        if (oldRecordList != null) {
+//            oldRecordList.setAdapter(adapter);
+//        } else {
+//            // do something
+//        }
 
     }
 

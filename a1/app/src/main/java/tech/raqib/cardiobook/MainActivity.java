@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements OnTimeSetListener
     public String recordString;
 
     public static final String RECORD_STRING = "tech.raqib.helloworld.MESSAGE";
-    private final static int REQUEST_CODE_1 = 1;
 
 
     @Override
@@ -138,6 +137,11 @@ public class MainActivity extends AppCompatActivity implements OnTimeSetListener
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        displayTime.setText(hourOfDay + ":" + minute);
+        if (minute < 10) {
+            displayTime.setText(hourOfDay + ":0" + minute);
+        } else {
+            displayTime.setText(hourOfDay + ":" + minute);
+        }
+
     }
 }
