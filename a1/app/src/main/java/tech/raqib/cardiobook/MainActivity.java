@@ -139,6 +139,8 @@ public class MainActivity extends AppCompatActivity implements OnTimeSetListener
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         if (minute < 10) {
             displayTime.setText(hourOfDay + ":0" + minute);
+        } else if (hourOfDay < 10) {
+            displayTime.setText("0"+ hourOfDay + ":" + minute);
         } else {
             displayTime.setText(hourOfDay + ":" + minute);
         }
