@@ -5,6 +5,9 @@ In this lab, we learn how to use GitHub and create multiple branches within a re
 
 We were also taught different git commands in the bash terminal to streamline our process for version control of our project.
 
+[Click here](https://github.com/imtiazraqib/gitdemo) to see the implementation of a gitdemo repo, which has certain commands that we went over in the lab.
+
+
 ----------
 
 **Lab Participation Exercise (Git and GitHub)**
