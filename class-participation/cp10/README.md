@@ -1,4 +1,4 @@
-#Class Participation Exercise 10
+# Class Participation Exercise 10
 
 Proper completion of this exercise is considered as part of course participation. An answer will be discussed in class.
 
